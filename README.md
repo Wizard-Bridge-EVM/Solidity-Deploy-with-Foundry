@@ -33,7 +33,7 @@ forge verify-contract --verifier blockscout --verifier-url <EXP_URL>/api? <YOU_C
 ```
 Edit (foundry.toml): libraries = ["src/WizardBridgeEVM.sol:Utils:<address>"]
 ```
-2.1
+2.2
 ```
 forge create --rpc-url <YOU_RPC_CHAIN> --private-key <YOU_PRIVATE_KEY> src/WizardBridgeEVM.sol:WizardBridgeEVM --constructor-args <TRUSTEDSIGNER_ADDRESS> <FEE_IS_WEI>wei
 ```
