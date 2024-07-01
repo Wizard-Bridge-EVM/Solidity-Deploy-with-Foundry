@@ -1,4 +1,48 @@
+<p align="center">
+  <a href="https://wizard-bridge-evm.gitbook.io/docs">
+      <picture>
+        <img alt="logo" src="https://github.com/Wizard-Bridge-EVM/Solidity-Deploy-with-Foundry/blob/main/wizardbridgeevm-logo-white.png" height="200px">
+      </picture>
+</a>
+</p>
 
+<div align="center">
+<a href="https://x.com/wizardbridgeevm" ><img src="https://img.shields.io/twitter/follow/wizardbridgeevm.svg?style=social" /></a>
+<a href="https://testnet-wizardbridgeevm.web.app" ><img src="https://img.shields.io/badge/Test-Website-green" /></a>
+<a href="https://www.facebook.com/people/Wizard-Bridge-EVM/61551776916251" ><img src="https://img.shields.io/badge/Page-Facebook-blue" /></a>
+
+<a href="https://github.com/Wizard-Bridge-EVM/Solidity-Deploy-with-Foundry/stargazers"><img src="https://img.shields.io/github/stars/Wizard-Bridge-EVM/Solidity-Deploy-with-Foundry" alt="Stars Badge"/></a>
+<a href="https://github.com/Wizard-Bridge-EVM/Solidity-Deploy-with-Foundry/network/members"><img src="https://img.shields.io/github/forks/Wizard-Bridge-EVM/Solidity-Deploy-with-Foundry" alt="Forks Badge"/></a>
+<a href="https://github.com/Wizard-Bridge-EVM/Solidity-Deploy-with-Foundry/pulls"><img src="https://img.shields.io/github/issues-pr/Wizard-Bridge-EVM/Solidity-Deploy-with-Foundry" alt="Pull Requests Badge"/></a>
+<a href="https://github.com/Wizard-Bridge-EVM/Solidity-Deploy-with-Foundry/issues"><img src="https://img.shields.io/github/issues/Wizard-Bridge-EVM/Solidity-Deploy-with-Foundry" alt="Issues Badge"/></a>
+<a href="https://github.com/Wizard-Bridge-EVM/Solidity-Deploy-with-Foundry/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Wizard-Bridge-EVM/Solidity-Deploy-with-Foundry?color=2b9348"></a>
+</div>
+
+<br>
+
+## Deployments
+<b>1.</b> deploy - Utils
+```
+forge create --rpc-url <YOU_RPC_CHAIN> --private-key <YOU_PRIVATE_KEY> src/Utils:Utils
+```
+1.2
+```
+forge verify-contract --verifier blockscout --verifier-url <EXP_URL>/api? <YOU_CONTRACT_ADDRESS> Uilts --chain-id <CHAIN_ID>
+```
+<b>2.</b> deploy - WizardBridgeEVM
+```
+Edit (foundry.toml): libraries = ["src/WizardBridgeEVM.sol:Utils:<address>"]
+```
+2.1
+```
+forge create --rpc-url <YOU_RPC_CHAIN> --private-key <YOU_PRIVATE_KEY> src/WizardBridgeEVM.sol:WizardBridgeEVM --constructor-args <TRUSTEDSIGNER_ADDRESS> <FEE_IS_WEI>wei
+```
+2.3
+```
+forge verify-contract --verifier blockscout --verifier-url <EXP_URL>/api? <YOU_CONTRACT_ADDRESS> WizardBridgeEVM --chain-id <CHAIN_ID>
+```
+
+<br>
 
 ---
 
